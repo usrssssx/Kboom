@@ -1,0 +1,2930 @@
+@font-face{
+  font-family: "Arial Black";
+  src: url("fonts/arial_black.ttf");
+}
+
+@font-face{
+  font-family: "Segoe UI Bold";
+  src: url("fonts/Segoe\ UI\ Bold.ttf");  
+}
+@font-face{
+  font-family: "Segoe UI Bold Italic";
+  src: url("fonts/Segoe\ UI\ Bold\ Italic.ttf");  
+}
+
+@font-face{
+  font-family: "Segoe UI Italic";
+  src: url("fonts/Segoe\ UI\ Italic.ttf");  
+}
+
+@font-face{
+  font-family: "Segoe UI";
+  src: url("fonts/Segoe\ UI.ttf");  
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  
+  
+}
+
+img{
+  margin-top: 1rem;
+  width: 8rem;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+body{
+  align-items:center;
+  text-align: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+
+}
+
+.my-nav{
+  position: relative;
+  margin: auto;
+  width: 1920px;
+  max-width: 100%;
+  background-color:white;
+  display:flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+span{
+  white-space: nowrap;
+}
+
+.nav-logo{
+  max-width: 50%;
+  margin-left: 120px;
+  
+}
+
+.nav-links{
+  font-size: 0.95rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav-icons{
+  margin-right: 100px;
+  display:flex;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1rem;
+  align-items: center;
+  white-space: nowrap;
+  
+}
+
+.container {
+background-color: #fff;
+border-radius: 50px;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+transition: 0.4s ease;
+height: 70px;
+width: 70px;
+}
+
+.container.open {
+width: 350px;
+}
+
+.container .open-btn {
+position: absolute;
+top: 0;
+left: 0;
+
+background-image: linear-gradient( 110.1deg,  rgba(255,105,180,1) 18.9%, rgba(255,20,147,1) 90.7% );
+color: #fff;
+cursor: pointer;
+border: 0;
+border-radius: 50%;
+font-size: 26px;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 0;
+height: 70px;
+width: 70px;
+z-index: 100;
+}
+
+.container.open .open-btn {
+display: none;
+}
+
+.container a {
+background-color: #fff;
+border-radius: 50%;
+font-size: 26px;
+display: flex;
+align-items: center;
+justify-content: center;
+position: absolute;
+top: 0;
+left: 0;
+margin: 10px;
+height: 50px;
+width: 50px;
+text-decoration: none;
+opacity: 0;
+}
+
+.container.open a {
+position: static;
+opacity: 1;
+transition: 0.4s ease;
+}
+
+.container a.tg {
+background-color: #0088cc;
+}
+.container a.wa {
+background-color: #25D366;
+}
+.container a.x {
+background-color: #282c37;
+}
+.container a.vk {
+background-color: #007bb5;
+}
+.container a.inst {
+background-color: #c32aa3;
+}
+
+.container a i {
+color: #fff;
+}
+
+.social-panel-container {
+position: fixed;
+right: 0;
+bottom: 80px;
+transform: translateX(100%);
+transition: transform 0.4s ease-in-out;
+}
+
+.social-panel-container.visible {
+transform: translateX(-10px);
+}
+
+.social-panel {	
+background-color: #fff;
+border-radius: 16px;
+box-shadow: 0 16px 31px -17px rgba(0,31,97,0.6);
+border: 5px solid #001F61;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-family: 'Muli';
+position: relative;
+height: 169px;	
+width: 370px;
+max-width: calc(100% - 10px);
+}
+
+.social-panel button.close-btn {
+border: 0;
+color: #97A5CE;
+cursor: pointer;
+font-size: 20px;
+position: absolute;
+top: 5px;
+right: 5px;
+}
+
+.social-panel button.close-btn:focus {
+outline: none;
+}
+
+.social-panel p {
+background-color: #001F61;
+border-radius: 0 0 10px 10px;
+color: #fff;
+font-size: 14px;
+line-height: 18px;
+padding: 2px 17px 6px;
+position: absolute;
+top: 0;
+left: 50%;
+margin: 0;
+transform: translateX(-50%);
+text-align: center;
+width: 235px;
+}
+
+.social-panel p i {
+margin: 0 5px;
+}
+
+.social-panel p a {
+color: #FF7500;
+text-decoration: none;
+}
+
+.social-panel h4 {
+margin: 20px 0;
+color: #97A5CE;	
+font-family: 'Muli';	
+font-size: 14px;	
+line-height: 18px;
+text-transform: uppercase;
+}
+
+.social-panel ul {
+display: flex;
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.social-panel ul li {
+margin: 0 10px;
+}
+
+.social-panel ul li a {
+border: 1px solid #DCE1F2;
+border-radius: 50%;
+color: #001F61;
+font-size: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 50px;
+width: 50px;
+text-decoration: none;
+}
+
+.social-panel ul li a:hover {
+border-color: #FF6A00;
+box-shadow: 0 9px 12px -9px #FF6A00;
+}
+
+.floating-btn {
+border-radius: 26.5px;
+background-color: #001F61;
+border: 1px solid #001F61;
+box-shadow: 0 16px 22px -17px #03153B;
+color: #fff;
+cursor: pointer;
+font-size: 16px;
+line-height: 20px;
+padding: 12px 20px;
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 999;
+}
+
+.floating-btn:hover {
+background-color: #ffffff;
+color: #001F61;
+}
+
+.floating-btn:focus {
+outline: none;
+}
+
+.floating-text {
+background-color: #001F61;
+border-radius: 10px 10px 0 0;
+color: #fff;
+font-family: 'Muli';
+padding: 7px 15px;
+position: fixed;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+text-align: center;
+z-index: 998;
+}
+
+.floating-text a {
+color: #FF7500;
+text-decoration: none;
+}
+
+.ri-mail-line{
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.ref-mail{
+  color:gray;
+}
+
+.ri-phone-line{
+  font-size: 1.5rem;
+  padding: 0.5rem;   
+}
+
+
+
+.link a{
+  position: relative;
+  padding-bottom: 0.25rem;
+  color: black;
+  text-transform: uppercase;
+}
+
+
+
+.link a::after{
+  content:"";
+  position: absolute;
+  height: 0.1rem;
+  width: 0;
+  bottom: 0;
+  left: 0;
+  background-color: pink;
+  transition: all 0.3s ease;
+}
+
+.link a:hover::after{
+  width:70%;
+}
+
+header{
+  height: 1600px;
+  display: flex;
+  background-image: url(images/glav_photo2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 3rem;
+  padding-bottom: 7rem;
+  height:0;
+  min-height: 800px;
+  align-items:center;
+  justify-content: center;
+  margin:0 auto;
+}
+
+.hi{
+  margin-right: 30rem;
+  text-align: left;
+  align-items:center;
+  justify-content: center;
+}
+
+
+
+.intro{
+  font-size: 62px;
+  color: white;
+  text-transform: uppercase;
+  line-height: 5rem;
+  white-space:nowrap;
+}
+
+.p-intro{
+  margin-top: 2rem;
+  font-size: 1.75rem;
+  color: rgb(255, 255, 255);
+
+}
+
+
+
+.b-intro{
+  margin: 3rem auto;
+}
+
+.applic1{
+  color: white;
+  background-color:#f81894;
+  font-family: 'Arial Black', serif;
+  text-transform: uppercase;
+  padding-top:2rem;
+  padding-bottom: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  border-radius: 1rem;
+  position: absolute;
+  margin-left: 18rem;
+}
+
+.h2charact{
+  margin-top: 100px;
+}
+
+.applic{
+  color: white;
+  background-color:#f81894;
+  font-family: 'Arial Black', serif;
+  text-transform: uppercase;
+  padding-top:2rem;
+  padding-bottom: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  border-radius: 1rem;
+  position: absolute;
+}
+
+.hero{
+  margin-left: 22rem;
+  background-color: #EDAB56;
+  font-family: 'Arial Black', serif;
+  text-transform: uppercase;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  border-radius: 1rem;
+  position: absolute;
+}
+
+.applic1:hover{
+  color:black;
+  background-color:#EEEFF1;
+  border: 3px solid black;
+  transition: all 0.3s ease;
+}
+
+.applic:hover{
+  color:black;
+  background-color:#EEEFF1;
+  border: 3px solid black;
+  transition: all 0.3s ease;
+}
+
+.hero:hover{
+  color:black;
+  background-color:white;
+  border: 3px solid black;
+  transition: all 0.3s ease;
+}
+
+.information{
+  background-color: white;
+  font-size:20px;
+  padding-top: 3rem;
+  margin: 1rem auto;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 10rem;
+  padding-right: 10rem;
+  padding-left: 10rem;
+}
+
+.beatyh2{
+
+  color: white;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background-color:#83639D;
+  border-radius: 0.5rem;
+}
+
+.h2intro{
+
+  text-transform: uppercase;
+  line-height: 4.25rem;    
+  white-space: nowrap;
+}
+
+.cards{
+  box-shadow:0 10px 30px black;
+  padding: 5rem 4rem;
+  margin: 50px auto;
+  background-color: #EEEFF1;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  align-items:center;
+  white-space: pre-line;
+  display:grid;
+  grid-template-columns: repeat(2, 3fr);
+  max-width:1920px;
+  width: auto;
+  gap: 8rem;
+  border-radius:50px;
+}
+
+.cards i{
+  padding: 0.2rem;
+  background-color:#cd5c5c;
+  color:white;
+  border-radius:0.5rem;
+  font-size: 8rem;
+}
+.cards p{
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-size: 13px;
+  text-align: left;
+}
+
+.card{
+  text-align:center;
+  display: flex;
+}
+
+.cont{
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  padding-top: 2rem;
+  background-color:#83639D;
+  padding-bottom:8rem;
+}
+
+.header{
+
+  font-size: 2rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: #EEEFF1;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.pricing{
+  text-align: left; 
+  margin: auto;
+  width: 1100px;
+  margin-top:1rem;
+  display: grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.pricing .rate{
+  padding: 3rem 2rem;
+  background-color:#EEEFF1;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  height: auto;
+}
+.pricing .rate:hover{
+  border-color: black;
+  background-color:blanchedalmond;
+}
+
+.pricind .rate .content{
+  height: auto;
+  flex: 1;
+  margin-bottom: 0.rem;
+}
+
+.pricing .rate h4{
+  text-align: center;
+  margin-bottom: 1rem;
+  color: black;
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.pricing .rate h3{
+  margin-top: 3rem;
+  color: balck;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.pricing .rate .p{
+  line-height: 3rem;
+  font-size: 15px;
+  color: black;
+}
+
+.pricing .rate p i{
+  line-height: 3rem;
+  color: black;
+  font-size: 1.2rem;
+  margin-right: 0.3rem;
+}
+
+
+.pricing .rate .info-price{
+  text-align: center;
+  font-size: 0.8rem;
+  color:lightslategray;
+}
+
+.intro1{
+  letter-spacing: 1rem;
+  margin-left: 18rem;
+  margin-top: -15rem;
+}
+
+.p-intro1{
+  margin-left: 18rem;
+  margin-top: -10rem;
+}
+
+.btn{
+  position: absolute;
+  padding:15px 15px;
+  font-size: 1rem;
+  background-color: #f81894;
+  color: white;
+  border-radius:0.5rem;
+  cursor: pointer;
+  transition: all 0.3 ease;
+
+}
+
+.btn:hover{
+  padding: 15px 15px;
+  border: 3px solid black;
+  transition: all 0.3s ease;
+  background-color:#EEEFF1;
+  color:black;   
+}
+
+.pricing .btn{
+  margin-top: 635px;
+  margin-left: 53px;
+}
+
+
+.info-event{
+  text-align: center;
+  font-size: 0.8rem;
+  color:lightslategray;
+}
+
+.help{
+  margin: 8rem auto;
+  text-align: left;
+  align-items: left;
+  white-space: nowrap;
+  padding-bottom: 2rem;
+  background:url(images/backg.png);
+  background-size: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 5rem;
+  width: 1400px;
+  height: 600px;
+  border-radius: 1rem;
+}
+
+.help h2{
+
+  font-size: 4rem;
+  margin-left: 3rem;
+  margin-top: 3rem;
+  line-height: 5rem;
+  color: white;
+}
+
+.help p{
+  font-family: "Arial Black" serif;
+  margin-top: 1rem;
+  margin-left: 3rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.help button{
+
+  font-size: 2rem;
+  margin-left: 3rem;
+  position: absolute;
+  margin-right:15rem;
+  padding: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-top: 2rem;
+  border-radius: 1rem
+}
+
+
+
+.dop-opt{
+  margin: 1rem auto;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5rem;
+  max-width: 1920px;
+}
+
+
+
+.bt{
+  padding:1rem 1rem;
+  font-size: 1rem;
+  background-color: #f81894;
+  color: white;
+  border-radius:0.5rem;
+  cursor: pointer;
+  transition: all 0.3 ease;
+}
+
+
+
+.bt:hover{
+  background-color: white;
+  color: black;
+  box-shadow: 0 10px 30px black;
+  transition:  all 0.3s ease-in-out;
+}
+
+
+.dop-opt h2{
+
+  padding-bottom: 3rem;
+  font-size: 2rem;
+}
+
+.dop-opt{
+  position: relative;
+  margin-right: 6rem;
+  margin-left: 6rem;
+  gap:1rem;
+  align-items:center;
+  display: grid;
+  grid-template-columns:repeat(3, 2fr);
+}
+
+
+
+
+.opts h4{
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.opts button{
+  font-size: 1rem;
+  padding-right: 6rem;
+  padding-left: 6rem;
+  margin-top: 1rem;
+}
+
+.opts{
+  display: inline-block;
+  padding-bottom: 5rem;
+}
+
+.opt img{
+  width: 420px;
+  height: 320px;
+}
+
+.otz{
+  margin: 0 auto;
+  display: grid;
+
+}
+
+.review p{
+
+  margin-right: 1rem;
+  font-size: 2rem;
+  padding-bottom: 5rem;
+}
+
+
+.reviews{
+  margin-top: 10rem;
+  margin: auto;
+  position: relative;
+  background: #fff;
+  width: 300px;
+  height: 300px;
+  min-width: 150px;
+  border-radius: 2rem;
+  padding: 20px;
+  box-shadow: 0 10px 30px #992572;
+}
+
+.reviews .images{
+  height: 25%;;
+}
+
+.reviews .images img{
+  width: 100%;
+  height: 100;
+  object-fit: cover;
+  border-radius: 10px;
+  display: none;
+}
+
+.reviews .images img.active{
+  display: block;
+}   
+
+.reviews .dots{
+  width: 120px;
+  margin: 20px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.reviews .images2{
+  height: 25%;;
+}
+
+.reviews .images2 img{
+  width: 100%;
+  height: 100;
+  object-fit: cover;
+  border-radius: 10px;
+  display: none;
+}
+
+.reviews .images2 img.active{
+  display: block;
+}
+
+.reviews .dots2{
+  width: 120px;
+  margin: 20px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.reviews .images3{
+  height: 25%;;
+}
+
+.reviews .images3 img{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: none;
+}
+
+.reviews .images3 img.active{
+  display: block;
+}
+
+.reviews .dots3{
+  width: 120px;
+  margin: 20px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.reviews button#prev,
+.reviews button#next{
+  color: white;
+  height: 40px;
+  width: 40px;
+  background: #992572;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 0 10px white;
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.reviews button#prev{
+  left: -60px;
+}
+
+.reviews button#next{
+  right: -60px;
+}
+
+section{
+  padding-bottom: 5rem;
+}
+
+
+
+.send-mail{
+  background:url(images/zayavka.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:absolute;
+  height: 850px;
+  
+}
+
+
+form {
+  text-align: center;
+}
+
+
+.title{
+  margin-top: 50px;
+  padding-top: 150px;
+  margin-right: 700px;
+
+color: black;
+font-size: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.form-control {
+  margin-right: 700px;
+  margin-bottom: 1rem;
+  background-color: #f2f6f8;
+border-radius: 2rem;
+  border: none;
+  box-shadow: 0px 7px 5px rgba(177, 8, 92, 0.778);
+}		
+.thick {
+    height: 3.3rem;
+    padding: 1rem 6rem;
+}
+  
+.thick:focus {
+    background-color: #f2f6f8;
+    border: none;
+    box-shadow: 0px 7px 5px rgba(177, 8, 92, 0.778);
+}
+
+
+.message .form-control {
+    padding: 1rem 6rem;
+}
+
+::placeholder {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #3e4047;
+  position: relative;
+  left: 0;
+}
+
+.input,
+.textarea {
+  font-family: 'Quicksand', sans-serif;
+  color: #212529;
+  font-size: 1.1rem;
+}
+
+
+.btn.btn-primary {
+margin-left: -470px;
+  margin-right: 0px;
+  margin-top: 25px;
+font-family: 'Quicksand', sans-serif;
+font-weight: bold;
+height: 2.5rem;
+line-height: 2.5rem;
+padding: 0 3rem;
+border: 0;
+border-radius: 3rem;
+background-image:linear-gradient(131deg,rgb(250, 120, 185), #fa0b8f);
+background-size: 300% 100%;
+transition: all 0.3s ease-in-out;
+}
+
+.btn.btn-primary:hover:enabled {
+box-shadow: 0 0.5em 0.5em -0.4em #f81894;
+background-size: 100% 100%;
+transform: translateY(-0.15em);
+}
+
+.bigslider{
+  font-family: Arial, sans-serif;
+  display: flex;
+  padding-top: 50px;
+  margin-top: 100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #83639D;
+}
+
+
+
+.slider {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.icon {
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.icon.active {
+  transform: scale(1.5);
+}
+
+.icons{
+  gap: 100px;
+}
+
+.info {
+  margin-top: 20px;
+  text-align: center;
+}
+.info-container {
+  display: none; /* Скрыто по умолчанию */
+  text-align: center;
+}
+.info-container.active {
+  display: block; /* Отображается при активности */
+}
+.arrow {
+  cursor: pointer;
+  font-size: 24px;
+  user-select: none;
+}
+.info-image {
+  max-width: 500px;
+  max-height: 400px;
+}
+
+.intro1{
+  font-size: 62px;
+  color: white;
+  text-transform: uppercase;
+  line-height: 5rem;
+  white-space:nowrap;
+}
+
+.p-intro1{
+  margin-top: 2rem;
+  font-size: 1.75rem;
+  color: rgb(255, 255, 255);
+
+}
+
+.charact{
+  display: grid;
+   margin: 0 auto; gap: 50px;
+   grid-template-columns: repeat(4,4fr); margin-top: 70px;
+}
+
+
+
+footer{
+  margin:0 auto;
+  text-align: center;;
+  justify-content: center;
+  align-items:center;
+  background-color:#F1F1F1;
+  padding-bottom: 50px;
+}
+
+.foot{
+  align-items: center;
+  margin:0 auto;
+  width: 1440px;
+  text-align: left;
+  grid-template-columns: repeat(3,1fr);
+  display: flex;
+}
+
+footer img{
+  margin-top: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+.inform{
+  margin-top: 100px;
+  font-size: 20px;
+  text-align: center;
+
+}
+
+.firma p{
+  margin-top: 15px;
+  font-size: 18px;
+  margin-bottom: 103px;
+}
+
+.contact{
+  margin-top: 40px;
+  margin-left: 500px;
+}
+
+.contact p{
+  font-size: 13px;
+}
+
+.graph{
+  margin-top: 40px;
+  margin-left: 100px;
+}
+
+.foot a{
+  color:#282c37;
+}
+
+.graph i{
+  font-size: 30px;
+}
+
+.magaz{
+  padding-bottom: 80px;
+}
+
+form{
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.heroes{
+  margin-top: 250px;
+}
+
+
+
+input {
+  cursor: pointer;
+  padding: 5px;
+  background-color:#F59B00;
+  border-radius:25%;
+  border:2px solid black;
+}
+
+input:hover{
+  background-color:white;
+}
+
+
+
+@media screen and (max-width: 480px) {
+
+.social-panel-container.visible {
+  transform: translateX(0px);
+}
+
+.floating-btn {
+  right: 10px;
+}
+}
+
+
+.heroes{
+  margin-top: 50px;
+}
+
+.heroes h2{
+  margin:0 auto;
+  padding: 10px 0 10px 0;
+}
+
+.heroes img {
+border-radius: 5%;
+width: 220px;
+height: 340px;
+cursor: pointer;
+overflow: hidden;
+transition: box-shadow 0.3s ease;
+}
+
+.heroes img:hover{
+width: 300px;
+height: 500px;
+margin-top:-100px;
+transition:  all 0.3s ease-in-out;
+}
+
+.heroes img{
+animation: sparkle 1s linear infinite;
+}
+
+@keyframes sparkle {
+0% {
+  box-shadow: 0 0 10px 5px rgba(255, 0, 195, 0.2);
+}
+
+50% {
+  box-shadow: 0 0 15px 10px rgb(255, 0, 204);
+}
+
+100% {
+  box-shadow: 0 0 10px 5px rgba(201, 6, 159, 0.2);
+}
+}
+
+
+
+.events img{
+  box-shadow:0 10px 30px black;
+  border-radius:5%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+
+
+
+.image-container img {
+  margin: 0 auto;
+  width: 400px;
+  height: 250px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+text-align: left;
+  box-shadow: 0 10px 30px black;
+  border-radius:5%;
+  background-color: #fefefe;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  min-height: 300px;
+  max-height: 600px;
+  min-width: 300px;
+  max-width: 1200px;
+  
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-text {
+font-family: "Segoe UI", Arial, sans-serif;
+font-size: 19px;
+  width: 50%;
+  padding: 10px;
+}
+
+.modal-image {
+  width: 50%;
+  padding: 10px;
+  margin-left: 30px;
+}
+
+.modal-image img {
+  width: 100%;
+  border-radius:5%;
+}
+
+.open-modal{
+  position: absolute;
+  margin-left: -110px;
+  margin-top: 10px;
+  padding:1rem 4rem 1rem 4rem;
+  font-size: 1rem;
+  background-color: #f81894;
+  color: white;
+  border-radius:0.5rem;
+  cursor: pointer;
+  transition: all 0.3 ease;
+}
+
+.open-modal:hover{
+  border: 3px solid black;
+  transition: all 0.3s ease;
+  background-color:#EEEFF1;
+  color:black;  
+}
+
+@media screen and (min-aspect-ratio: 16/9) and (max-aspect-ratio: 16/10) {
+/* Стили для 16:9 и 16:10, которые подстраивают блоки под разрешение,
+   но не меняют их формат */
+.cards {
+  /* Измените значения по необходимости */
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.pricing {
+  /* Измените значения по необходимости */
+  width: 1200px;
+}
+
+.help {
+  /* Измените значения по необходимости */
+  width: 1600px;
+}
+
+.otz {
+  /* Измените значения по необходимости */
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.dop-opt {
+  /* Измените значения по необходимости */
+  grid-template-columns: repeat(3, 2fr);
+}
+}
+
+/* Медиазапрос для 4:3 */
+@media screen and (aspect-ratio: 4/3) {
+/* Стили для 4:3, которые подстраивают блоки под разрешение,
+   но не меняют их формат */
+.cards {
+  /* Измените значения по необходимости */
+  grid-template-columns: repeat(2, 2fr);
+}
+
+.pricing {
+  /* Измените значения по необходимости */
+  width: 1000px;
+}
+
+.help {
+  /* Измените значения по необходимости */
+  width: 1200px;
+}
+
+.otz {
+  /* Измените значения по необходимости */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.dop-opt {
+  /* Измените значения по необходимости */
+  grid-template-columns: repeat(2, 2fr);
+}
+}
+
+/* Медиазапрос для телефонов */
+@media screen and (max-width: 768px) {
+/* Стили для телефонов, которые меняют формат блоков */
+.cards {
+  /* Измените значения по необходимости */
+  grid-template-columns: 1fr;
+}
+
+.pricing {
+  /* Измените значения по необходимости */
+  width: 90%;
+  grid-template-columns: 1fr;
+}
+
+.help {
+  /* Измените значения по необходимости */
+  width: 90%;
+}
+
+.otz {
+  /* Измените значения по необходимости */
+  grid-template-columns: 1fr;
+}
+
+.dop-opt {
+  /* Измените значения по необходимости */
+  grid-template-columns: 1fr;
+}
+
+.reviews {
+  /* Измените значения по необходимости */
+  width: 90%;
+}
+
+.review {
+  /* Измените значения по необходимости */
+  text-align: center;
+}
+
+.row {
+  /* Измените значения по необходимости */
+  flex-direction: column;
+}
+
+.image-container img {
+  /* Измените значения по необходимости */
+  width: 90%;
+}
+
+.modal-body {
+  /* Измените значения по необходимости */
+  flex-direction: column;
+}
+
+.modal-text {
+  /* Измените значения по необходимости */
+  width: 90%;
+}
+
+.modal-content .modal-text{
+  max-width: 768px;
+  width: 90%;
+}
+
+.modal-image img{
+  /* Измените значения по необходимости */
+  width: 320px;
+}
+
+.foot {
+  /* Измените значения по необходимости */
+  flex-direction: column;
+  align-items: center;
+}
+
+.send-mail form {
+  /* Измените значения по необходимости */
+  width: 90%;
+  margin: 0 auto;
+}
+
+.send-mail .form-control {
+  /* Измените значения по необходимости */
+  margin-right: 0;
+}
+
+.send-mail .btn {
+  /* Измените значения по необходимости */
+  margin-right: 0;
+}
+
+.title {
+  /* Измените значения по необходимости */
+  margin-right: 0;
+}
+
+.bigslider {
+  /* Измените значения по необходимости */
+  flex-direction: column;
+}
+
+.slider {
+  /* Измените значения по необходимости */
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.icons {
+  /* Измените значения по необходимости */
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrow {
+  /* Измените значения по необходимости */
+  margin-top: 10px;
+}
+}
+
+
+
+
+
+
+/* Стили для мобильных устройств */
+@media screen and (max-width: 768px) {
+.my-nav {
+  text-align: right;
+  flex-direction: column;
+}
+
+.nav-links {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.nav-icons {
+
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hi {
+  margin: 0 auto;
+  margin-right: 0;
+  text-align: center;
+}
+
+.intro {
+  font-size: 1.65rem;
+}
+
+.p-intro {
+  font-size: 1rem;
+}
+
+.applic {
+  display: none;
+  margin-left: 0;
+}
+
+.hero {
+  margin-left: -140px;
+}
+
+.cards {
+  grid-template-columns: 1fr;
+}
+
+.pricing {
+  width: 90%;
+  grid-template-columns: 1fr;
+}
+
+.help {
+  width: 90%;
+}
+
+.otz {
+  grid-template-columns: 1fr;
+}
+
+.dop-opt {
+  grid-template-columns: 1fr;
+}
+
+.reviews {
+  width: 90%;
+}
+
+.review {
+  text-align: center;
+}
+
+
+
+
+.foot {
+  flex-direction: column;
+  align-items: center;
+}
+
+.send-mail form {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.send-mail .form-control {
+  margin-right: 0;
+}
+
+.send-mail .btn {
+  margin-right: 0;
+}
+
+.title {
+  margin-right: 0;
+}
+
+.bigslider {
+  flex-direction: column;
+}
+
+.slider {
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.icons {
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrow {
+  margin-top: 10px;
+}
+}
+
+/* Стили для секции "Отзывы" на мобильных устройствах */
+@media screen and (max-width: 768px) {
+.otz {
+  grid-template-columns: 1fr;
+}
+
+.reviews {
+  margin-bottom: 20px;
+}
+
+.reviews:nth-child(1) {
+  margin-bottom: 0;
+}
+}
+
+/* Стили для секции "Герои" на мобильных устройствах */
+@media screen and (max-width: 768px) {
+.heroes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroes img {
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+.nav-logo {
+  max-width: 30%;
+  margin-left: -180px;
+}
+
+.intro {
+  margin-right: 20px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.p-intro {
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+
+.intro1{
+  margin-right: 20px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.p-intro1{
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+
+.hero{
+  margin-right: 40px;
+}
+
+header{
+  margin-bottom: 100px;
+}
+
+.information{
+  display: none;
+}
+
+.pricing .btn-1{
+  font-size: 10px;
+
+}
+
+.pricing .btn-2{
+  font-size: 10px;
+
+}
+
+.pricing .btn-3{
+  font-size: 10px;
+
+}
+
+.pricing {
+  padding-top: 30px;
+  width: 90%;
+}
+
+image-container img {
+  width: 100%; /* Адаптация изображений */
+  height: auto;
+  width: auto; /* Автоматическая высота для сохранения пропорций */
+}
+
+.modal-content{
+  width: auto;
+  max-width: 768px; /* Проверяем, чтобы модальное окно не выходило за экран */
+  margin: 10px; /* Уменьшает отступы */
+}
+
+.modal-body {
+  flex-direction: column; /* Меняем направление расположения на столбец для мобильных */
+  align-items: center; /* Центрируем содержимое */
+}
+
+.modal-text {
+  width: 100%; /* Занимает всю ширину экрана */
+  font-size: 9px; /* Уменьшаем размер шрифта для мобильных */
+}
+
+.modal-image {
+  width: 100%; /* Занимает всю ширину экрана */
+  margin: -30px auto;
+}
+
+.modal-image img {
+  max-width: 768;
+  max-height: 768;
+  height: auto; /* Получаем авторазмер для изображения */
+}
+
+
+.help {
+  display: none;
+}
+
+.otz {
+  grid-template-columns: 1fr;
+}
+
+.options h2{
+  font-size: 1rem;
+}
+
+.row{
+  margin-top: -20px;
+}
+
+.row .image-container{
+  margin-top: 50px;
+}
+.row .image-container h2{
+  font-size: 0.75rem;
+}
+
+.row .image-container .open-modal{
+  font-size: o.5rem;
+}
+
+.dop-opt {
+  grid-template-columns: 1fr;
+}
+
+.reviews {
+  display: flex;
+  margin-top: 30px;
+}
+
+.reviews button#prev,
+.reviews button#next{
+  color: white;
+  height: 40px;
+  width: 40px;
+  background: #992572;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 0 10px white;
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.reviews button#prev{
+  font-size: 1rem;
+  top:330px;
+  left: 100px;
+}
+
+.reviews button#next{
+  font-size: 1rem;
+  top:330px;
+  right: 100px;
+}
+
+
+.send-mail .thick{
+
+  padding: 0 2rem;
+}
+
+.send-mail form {
+  width: 90%;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+footer{
+  width: 320px;
+  flex-direction: column;
+}
+
+.foot{
+  width: 320px;
+}
+
+.foot .firma{
+  margin: 0 auto;
+  text-align: center;
+
+}
+.foot .inform{
+  margin-top: 0px;
+}
+
+.foot .contact{ 
+  display: row;
+  flex-direction: row;
+  margin-right: 650px;
+  margin-top: 10px;
+}
+
+.foot .graph{
+  margin-left: 0px;
+  margin-right: 100px;
+}
+
+.charact{
+  display: flex;
+  flex-direction: column;
+}
+
+.charact img{
+  width: 220px;
+}
+
+}
+
+/* Медиазапросы для разных разрешений */
+@media screen and (max-width: 320px) {
+.nav-logo {
+  max-width: 30%;
+  margin-left: -180px;
+}
+
+.intro {
+  margin-right: 20px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.p-intro {
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+
+.intro1{
+  margin-right: 290px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+}
+
+.p-intro1{
+  margin-right: 290px;
+  font-size: 0.8rem;
+}
+
+.applic1{
+  display: none;
+}
+
+.hero{
+  margin-right: 40px;
+}
+
+header{
+  margin-bottom: 100px;
+}
+
+.information{
+  display: none;
+}
+
+.pricing .btn-1{
+  font-size: 10px;
+  margin-top:540px;
+}
+
+.pricing .btn-2{
+  font-size: 10px;
+  margin-top:690px;
+}
+
+.pricing .btn-3{
+  font-size: 10px;
+  margin-top:730px;
+}
+
+
+.pricing {
+  padding-top: 30px;
+  width: 90%;
+}
+
+
+
+.help {
+  display: none;
+}
+
+.otz {
+  grid-template-columns: 1fr;
+}
+
+.options h2{
+  font-size: 1rem;
+}
+
+.row{
+  margin-top: -20px;
+}
+
+.row .image-container{
+  margin-top: 50px;
+}
+.row .image-container h2{
+  font-size: 0.75rem;
+}
+
+.row .image-container .open-modal{
+  font-size: o.5rem;
+}
+
+.dop-opt {
+  grid-template-columns: 1fr;
+}
+
+.reviews {
+  display: flex;
+  margin-top: 30px;
+}
+
+.reviews button#prev,
+.reviews button#next{
+  color: white;
+  height: 40px;
+  width: 40px;
+  background: #992572;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 0 10px white;
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.reviews button#prev{
+  font-size: 1rem;
+  top:330px;
+  left: 100px;
+}
+
+.reviews button#next{
+  font-size: 1rem;
+  top:330px;
+  right: 100px;
+}
+
+
+.send-mail .thick{
+
+  padding: 0 2rem;
+}
+
+.send-mail form {
+  width: 90%;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+footer{
+  width: 320px;
+  flex-direction: column;
+}
+
+.foot{
+  width: 320px;
+}
+
+.foot .firma{
+  margin: 0 auto;
+  text-align: center;
+
+}
+.foot .inform{
+  margin-top: 0px;
+}
+
+.foot .contact{ 
+  display: row;
+  flex-direction: row;
+  margin-right: 650px;
+  margin-top: 10px;
+}
+
+.foot .graph{
+  margin-left: 0px;
+  margin-right: 100px;
+}
+
+.charact{
+  display: flex;
+  flex-direction: column;
+}
+
+.charact img{
+  width: 220px;
+}
+
+.image-container{
+  margin-bottom: 100px;
+}
+
+
+}
+
+@media screen and (max-width: 360px){
+.nav-logo {
+  max-width: 30%;
+  margin-left: -180px;
+}
+
+.intro {
+  margin-right: 20px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.p-intro {
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+
+.intro1{
+  margin-right: 290px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+}
+
+.p-intro1{
+  margin-right: 290px;
+  font-size: 0.8rem;
+}
+
+.applic1{
+  display: none;
+}
+
+.hero{
+  margin-right: 40px;
+}
+
+header{
+  margin-bottom: 100px;
+}
+
+.information{
+  display: none;
+}
+
+.pricing .btn-1{
+  font-size: 10px;
+  margin-right: 1000px;
+}
+
+.pricing .btn-2{
+  font-size: 10px;
+  margin-top:660px;
+  margin-right: 1000px;
+}
+
+.pricing .btn-3{
+  font-size: 10px;
+  margin-top:660px;
+  margin-right: 1000px;
+}
+
+
+.pricing {
+  padding-top: 30px;
+  width: 90%;
+}
+
+
+
+.help {
+  display: none;
+}
+
+.otz {
+  grid-template-columns: 1fr;
+}
+
+.options h2{
+  font-size: 1rem;
+}
+
+.row{
+  margin-top: -20px;
+}
+
+.row .image-container{
+  margin-top: 50px;
+}
+.row .image-container h2{
+  font-size: 0.75rem;
+}
+
+.row .image-container .open-modal{
+  font-size: o.5rem;
+}
+
+.dop-opt {
+  grid-template-columns: 1fr;
+}
+
+.reviews {
+  display: flex;
+  margin-top: 30px;
+}
+
+.reviews button#prev,
+.reviews button#next{
+  color: white;
+  height: 40px;
+  width: 40px;
+  background: #992572;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 0 10px white;
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.reviews button#prev{
+  font-size: 1rem;
+  top:330px;
+  left: 100px;
+}
+
+.reviews button#next{
+  font-size: 1rem;
+  top:330px;
+  right: 100px;
+}
+
+
+.send-mail .thick{
+
+  padding: 0 2rem;
+}
+
+.send-mail form {
+  width: 90%;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+footer{
+  width: 320px;
+  flex-direction: column;
+}
+
+.foot{
+  width: 320px;
+}
+
+.foot .firma{
+  margin: 0 auto;
+  text-align: center;
+
+}
+.foot .inform{
+  margin-top: 0px;
+}
+
+.foot .contact{ 
+  display: row;
+  flex-direction: row;
+  margin-right: 650px;
+  margin-top: 10px;
+}
+
+.foot .graph{
+  margin-left: 0px;
+  margin-right: 100px;
+}
+
+.charact{
+  display: flex;
+  flex-direction: column;
+}
+
+.charact img{
+  width: 220px;
+}
+
+.image-container{
+  margin-bottom: 100px;
+}
+}
+
+@media screen and (max-width: 768px) {
+.nav-logo {
+  max-width: 30%;
+  margin-left: -180px;
+}
+.applic1{
+  display: none;
+}
+
+.image-container{
+  margin-bottom: 100px;
+}
+
+.intro {
+  margin-right: 20px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.intro1{
+  margin-right: 290px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.p-intro1{
+  margin-right: 290px;
+  font-size: 0.8rem;
+}
+
+.p-intro {
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+
+.hero{
+  margin-right: 40px;
+}
+
+header{
+  margin-bottom: 100px;
+}
+
+.information{
+  display: none;
+}
+
+.pricing .btn-1{
+  font-size: 10px;
+  margin-left:95px;
+  margin-top: 520px;
+}
+
+.pricing .btn-2{
+  font-size: 10px;
+  margin-left:92px;
+}
+
+.pricing .btn-3{
+  font-size: 10px;
+  margin-left:92px;
+}
+
+.pricing {
+  padding-top: 30px;
+  width: 90%;
+}
+
+
+
+.help {
+  display: none;
+}
+
+.otz {
+  grid-template-columns: 1fr;
+}
+
+.options h2{
+  font-size: 1rem;
+}
+
+.row{
+  margin-top: -20px;
+}
+
+.row .image-container{
+  margin-top: 50px;
+}
+.row .image-container h2{
+  font-size: 0.75rem;
+}
+
+.row .image-container .open-modal{
+  font-size: o.5rem;
+}
+
+.dop-opt {
+  grid-template-columns: 1fr;
+}
+
+.reviews {
+  display: flex;
+  margin-top: 30px;
+}
+
+.reviews button#prev,
+.reviews button#next{
+  color: white;
+  height: 40px;
+  width: 40px;
+  background: #992572;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 0 10px white;
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.reviews button#prev{
+  font-size: 1rem;
+  top:330px;
+  left: 100px;
+}
+
+.reviews button#next{
+  font-size: 1rem;
+  top:330px;
+  right: 100px;
+}
+
+
+.send-mail .thick{
+
+  padding: 0 2rem;
+}
+
+.send-mail form {
+  width: 90%;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+footer{
+  max-width: 768px;
+  width: auto;
+  flex-direction: column;
+}
+
+
+.foot{
+  width: 320px;
+}
+
+.foot .firma{
+  margin: 0 auto;
+  text-align: center;
+
+}
+.foot .inform{
+  margin-top: 0px;
+}
+
+.foot .contact{ 
+  display: row;
+  flex-direction: row;
+  margin-right: 650px;
+  margin-top: 10px;
+}
+
+.foot .graph{
+  margin-left: 0px;
+  margin-right: 100px;
+}
+
+.charact{
+  display: flex;
+  flex-direction: column;
+}
+
+.charact img{
+  width: 220px;
+}
+
+}
+
+
+@media screen and (max-width: 1024px) and (min-width:800px) {
+.nav-logo {
+  max-width: 50%;
+}
+.intro{
+  font-size: 2.5rem;
+  margin-top: 120px;
+  margin-left: 80px;
+}
+
+.p-intro{
+  font-size: 1rem;
+  margin-left: 80px;
+}
+
+.applic{
+  margin-left: 80px;
+}
+
+.hero{
+  margin-left: 450px;
+}
+
+.h2intro{
+  font-size: 1rem;
+}
+
+.information .cards{
+  margin-left: -140px;
+  width:140%;
+  
+}
+
+.card p{
+  font-size: 1rem;
+}
+
+.card i{
+  font-size: 7rem;
+}
+
+
+.help{
+  height: 400px;
+  width: 90%;
+}
+
+.help h2{
+  line-height: 2rem;
+  font-size: 2rem;
+  margin-top: -10px;
+}
+
+
+.rate{
+  
+  margin-left: 10px;
+  width: 250px;
+}
+
+
+
+.image-container img {
+  margin-top: 100px;/* Автоматическая высота для сохранения пропорций */
+}
+
+.modal-content{
+  width: auto;
+  max-width: 900px; /* Проверяем, чтобы модальное окно не выходило за экран */
+  margin: 100px;
+  margin-left: 60px; /* Уменьшает отступы */
+}
+
+
+
+.modal-text {
+  width: 100%; /* Занимает всю ширину экрана */
+  font-size: 1rem; /* Уменьшаем размер шрифта для мобильных */
+
+}
+
+.modal-image {
+height: 80%;
+  width: 100%; /* Занимает всю ширину экрана */
+}
+
+.row{
+margin-top: 40px;
+gap: 10px;
+}
+
+.row img{
+width: 300px;
+}
+
+
+
+.review{
+margin-left: 3rem;
+}
+
+.send-mail{
+background:url(images/zayavka1.png)
+}
+
+.send-mail form{
+margin-left: 100px;
+}
+
+.foot .contact{
+margin-left: 30px;
+
+}
+
+.intro1{
+font-size: 2.5rem;
+  margin-top: 120px;
+  margin-left: 80px;
+}
+
+.p-intro1{
+font-size: 1rem;
+  margin-left: 80px;
+}
+
+.charact{
+display: grid;
+grid-template-columns: repeat(3,3fr);
+}
+}
+
+@media screen and (max-width: 1280px) and (min-width:1025px) {
+.nav-logo {
+  max-width: 40%;
+}
+
+.intro{
+  margin-left: 150px;
+}
+
+.p-intro{
+  margin-left: 150px;
+}
+
+.applic{
+  margin-left: 150px;
+}
+
+.hero{
+  margin-left: 500px;
+}
+
+.modal-content{
+  width: auto;
+  margin: 100px;
+  margin-right: 240px; /* Уменьшает отступы */
+  max-height: 1000px;
+  height: 700px;
+}
+
+.review p{
+margin-right: 420px;
+}
+
+.review{
+margin-left: 28rem;
+}
+
+.foot .contact{
+margin-left: 300px;
+}
+
+.intro1{
+margin-left: 150px;
+}
+
+.p-intro1{
+margin-left: 150px;
+}
+
+.applic1{
+margin-right: 150px;
+}
+}
+
+@media screen and (max-width: 1920px) and (min-width: 1450px) {
+.nav-logo {
+  max-width: 30%;
+}
+
+.my-nav{
+  width: 1920px;
+}
+
+.bxs-balloon{
+  margin-left: -7.5rem;
+}
+
+.charact img{
+  width: 80%;
+  height: 80%;
+
+}
+
+.heroes img:hover{
+  width: 100%;
+  height: 100%;
+}
+
+
+.p-balloon{
+  margin-right: -10rem;
+}
+
+.modal-content{
+  width: auto;
+  max-width: 1700px; /* Проверяем, чтобы модальное окно не выходило за экран */
+  margin: 200px;
+  margin-left: 300px; /* Уменьшает отступы */
+}
+
+.cards .card p{
+  font-size: 1.1rem;
+}
+
+.send-mail{
+  height: 1100px;
+}
+
+.btn.btn-primary {
+  margin-left: -650px;
+  margin-top: 25px;
+  font-size: 1.5rem;
+}
+
+.rate p{
+  font-size: 22px;
+}
+
+.rate h6{
+  font-size: 15px;
+}
+
+.pricing .btn{
+  margin-top: 750px;
+}
+
+
+.reviews{
+  height: 500px;
+  width: 500px;
+}
+
+.foot{
+  font-size: 17px;
+}
+
+.title{
+  margin-top: 50px;
+  padding-top: 200px;
+  margin-right: 1000px;
+
+color: black;
+font-size: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.form-control {
+  margin-right: 1000px;
+  margin-bottom: 1rem;
+  background-color: #f2f6f8;
+  border-radius: 2rem;
+  box-shadow: 0px 7px 5px rgba(177, 8, 92, 0.778);
+}		
+.thick {
+  font-size: 1.5rem;
+    height: 3.3rem;
+    padding: 1rem 5rem;
+}
+  
+.thick:focus {
+    font-size: 1.5rem;
+    background-color: #f2f6f8;
+    border: none;
+    box-shadow: 0px 7px 5px rgba(177, 8, 92, 0.778);
+}
+
+
+.message .form-control {
+  padding: 1rem 10rem ;
+}
+
+::placeholder {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #3e4047;
+  position: relative;
+  left: 0;
+  
+}
+
+.input,
+.textarea {
+  font-family: 'Quicksand', sans-serif;
+  color: #212529;
+  font-size: 1.5rem;
+}
+.intro1{
+  margin-top:0px;
+  margin-right: 350px;
+}
+
+.p-intro1{
+  margin-bottom: 130px;
+}
+
+}
+
+.row h2{
+font-size: 20px; 
+font-weight: 0,5rem;
+
+}
+
+
+
+@media screen and (max-width: 2650px) and (min-width: 1921px){
+.bxs-balloon{
+  margin-left: -45px;
+}
+
+.p-balloon{
+  margin-right: 100px;
+}
+
+.send-mail{
+  height: 1500px;
+}
+}
+
+
+
+
+@media screen and (min-width: 780px) and (max-width:900px) {
+.nav-logo{
+  margin-left: 0px
+};
+
+header{
+  background:url(images/glav_photo3.png);
+  background-color:white;
+}
+
+.intro{
+  text-align: center;
+  font-size: 30px;
+  margin-left: 25rem;
+}
+
+.p-intro{
+  text-align: center;
+  font-size: 15px;
+  margin-left: 25rem;
+}
+
+.hero{
+  margin-left: 43rem;
+}
+
+.applic{
+  margin-left: 20rem;
+}
+
+.information{
+  display: none;
+}
+
+.pricing{
+  display: flex;
+  flex-direction: column;
+}
+
+.rate{
+  margin-left: 11rem;
+  width: 40%;
+}
+
+.image-container img {
+  margin-top: 40px;/* Автоматическая высота для сохранения пропорций */
+}
+
+.modal-content{
+  width: auto;
+  max-width: 768px; /* Проверяем, чтобы модальное окно не выходило за экран */
+  margin: 10px; /* Уменьшает отступы */
+}
+
+.modal-body {
+  flex-direction: column; /* Меняем направление расположения на столбец для мобильных */
+  align-items: center; /* Центрируем содержимое */
+}
+
+.modal-text {
+  width: 100%; /* Занимает всю ширину экрана */
+  font-size: 11px; /* Уменьшаем размер шрифта для мобильных */
+}
+
+.modal-image {
+height: 80%;
+  width: 80%; /* Занимает всю ширину экрана */
+  margin: -30px auto;
+}
+
+.row{
+margin-top: 40px;
+flex-direction: column;
+}
+
+
+.help{
+display: none;
+}
+
+.foot .contact{
+margin-left: 10px;
+}
+
+.send-mail form{
+margin-left: 15rem;
+}
+
+.charact{
+display:grid;
+grid-template-columns: repeat(3,3fr);
+}
+
+.intro1{
+text-align: center;
+  font-size: 30px;
+  margin-left: 25rem;
+}
+
+.p-intro1{
+text-align: center;
+  font-size: 15px;
+  margin-left: 25rem;
+}
+
+.applic1{
+display: none;
+}
+
+
+}
+
+@media screen and (min-width: 1650px) and (max-width:1900px) {
+.card .bxs-balloon{
+  margin-left: 0px;
+}
+
+.send-mail{
+  width: 1650px;
+}
+}
